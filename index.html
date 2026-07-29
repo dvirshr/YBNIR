@@ -2988,7 +2988,7 @@ async function renderDashScreen(){
       });
     });
     r.mspNow=mNow; r.mspNext=mNext; r.mspLate=mLate;
-    r.lateWork=countLateTasks(bld);
+    r.lateWork=(((p.data||{}).buildings)||[]).reduce((s,bld)=>s+countLateTasks(bld),0);
     r.broken=broken; r.notBroken=notBroken;
     r.ordOpen=oOpen; r.ordDone=oDone; r.ordLate=oLate; r.ordWeek=oWeek; r.ordMonth=oMonth;
     // יחס כיסוי: כמה ממשימות הלו"ז השבוע קיבלו פירוק
